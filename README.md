@@ -155,7 +155,7 @@ Enable key-based login
 
 Test Connection
 
-$ netstat -an |grep <c2 port for ptdb>
+$ netstat -an |grep <c2 port for ptdb> 
 
 
 
