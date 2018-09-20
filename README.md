@@ -1,5 +1,5 @@
 # shells-on-cells
-######### Build rpi Image on Mac ############
+# Build rpi Image on Mac
 
 Download Raspberian:
 https://www.raspberrypi.org/downloads/raspbian/
@@ -58,7 +58,7 @@ The drive will mount drop an empty "ssh" file into the root of the boot partitio
 
 
 
-################# Node Setup ################## 
+# Node Setup
 
 
 Put the SD into the PI boot the pi and give it ethernet and you should be able to find it and ssh to it.
@@ -145,7 +145,7 @@ c2$ ssh pi@localhost -p <c2 port for ptdb> -i ~/.ssh/<ptdbkey>
 
 Reboot and netstat your c2 for your ptdb's
 
-############## C2 Configuration ###############
+# C2 Configuration 
 
 configure ssh enabled user
 Copy node keys to ~/.ssh/
