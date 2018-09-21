@@ -132,11 +132,15 @@ Replace <c2 user> with the username the n0d3z should call home too
 Replace <c2 domain> with the domain or IP of the c2
 
 sudo nano /etc/network/interfaces    Use /etc-network-interfaces
+
 sudo nano /etc/ssh/ssh_config      Use /etc-ssh-ssh_config ptdb
+
 sudo nano /etc/ssh/sshd_config       Use /etc-ssh-sshd_config ptdb
 
 Now SSH to c2 with the same ssh command from yoursystem$, add fingerprint when prompted.
+
 sudo nano /etc/ssh/ssh_config      Use /etc-ssh-ssh_config c2
+
 sudo nano /etc/ssh/sshd_config       Use /etc-ssh-sshd_config c2
 
 yoursystem$ ssh <c2 user>@<c2 domain> -p <c2 port for ssh> -i ~/.ssh/<c2key or ptdbkey>
