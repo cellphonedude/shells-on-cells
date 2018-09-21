@@ -122,7 +122,7 @@ Edit the following configuration files with the configurations:
 
 sudo nano /etc/rc.local    Use /etc-rc.local
 
-autossh -N -R <ptdb port>:localhost:<c2 port for ptdb> <c2 user>@<c2 domain> -p <c2 port for ssh> -i /home/pi/.ssh/<nodename_rsa> &
+autossh -fN -R <ptdb port>:localhost:<c2 port for ptdb> <c2 user>@<c2 domain> -p <c2 port for ssh> -i /home/pi/.ssh/<nodename_rsa> &
 
 
 Replacing the <ptdb port> with this ptdb's port that it will communicate to c2 with
