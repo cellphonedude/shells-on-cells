@@ -1,6 +1,6 @@
 # shells-on-cells
 
-#Hardware
+# Hardware
 
 Raspberry Pi Zero W or Raspberry Pi3B (Raspberry Pi3B+ not yet compatible)
 
@@ -95,20 +95,20 @@ Run Install Scripts
 
 The first script will update your pi and delete and regenerate host keys
 
-$ 1stboot.sh 
+$1stboot.sh 
 
 The second script downgrade the kerel to 4.14 currently the latest supported nexmon drivers
 
-$ 2ndboot.sh
+$2ndboot.sh
 
 Third script is fun tools, prerequesuites for driver installation, and kernel source
 
-$ preinstall.sh
+$preinstall.sh
 
 This last script downloads nexmon from git, and builds the drivers only run the one for your device noted by filename, must be run as root
 
-# postinstall-pizerow.sh
-# postinstall-pi3.sh
+#postinstall-pizerow.sh
+#postinstall-pi3.sh
 
 Lastly there's a kismet script that install's kismet stable and you user pi to the kismet group
 
