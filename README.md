@@ -91,7 +91,7 @@ Select Finish
 When you exit it will ask to reboot, go ahead and reboot and reconnect
 You should be connecting with your new password and the hostname should be changed
 
-Run Install Scripts
+# Run Install Scripts
 
 The first script will update your pi and delete and regenerate host keys
 
@@ -114,9 +114,7 @@ Lastly there's a kismet script that install's kismet stable and you user pi to t
 
 $ kismetinstall.sh
 
-# exit
-
-Now Make SSH Keys For node and copy them off so you have them. 
+# Now Make SSH Keys For node and copy them off so you have them. 
 
 mkdir ~/.ssh
 chmod 700 ~/.ssh
@@ -141,7 +139,7 @@ sudo nano /etc/ssh/ssh_config      Use /etc-ssh-ssh_config ptdb
 
 sudo nano /etc/ssh/sshd_config       Use /etc-ssh-sshd_config ptdb
 
-Now SSH to c2 with the same ssh command from yoursystem$, add fingerprint when prompted.
+# Now SSH to c2 with the same ssh command from yoursystem$, add fingerprint when prompted.
 
 sudo nano /etc/ssh/ssh_config      Use /etc-ssh-ssh_config c2
 
