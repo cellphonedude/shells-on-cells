@@ -1,4 +1,9 @@
 # shells-on-cells
+
+#Hardware
+
+Raspberry Pi Zero W or Raspberry Pi3B (Raspberry Pi3B+ not yet compatible)
+
 # Build rpi Image on Mac
 
 Download Raspberian:
@@ -71,47 +76,43 @@ Upon first login you get a warning to update the password
 
 $ passwd
 
-$ sudo apt update
-
-$ sudo apt upgrade
-
-$ sudo apt autoremove
-
-$ sudo apt install bash-completion openssh-server autossh gpsd aircrack-ng dnsmasq hostapd
-
 Use raspi-config to configure network before boot, and hostname
 
 $ sudo raspi-config
 
 Select Option 2, N1, then set hostname
+
 Select Option 3, B2, Yes, Ok
+
+Select Option 5, P6, No, Yes, Ok
+
+Select Finish
 
 When you exit it will ask to reboot, go ahead and reboot and reconnect
 You should be connecting with your new password and the hostname should be changed
 
-Regenerate Host Keys
+Run Install Scripts
 
-Step # 1: Delete old ssh host keys
+The first script will update your pi and delete and regenerate host keys
 
-Login as the root and type the following command to delete files on your default SSH keys for the server:
+$ 1stboot.sh 
 
-$ sudo su -
+The second script downgrade the kerel to 4.14 currently the latest supported nexmon drivers
 
-# rm -v /etc/ssh/ssh_host_*
+$ 2ndboot.sh
 
-Step # 2: Reconfigure OpenSSH Server
+Third script is fun tools, prerequesuites for driver installation, and kernel source
 
-Now create a new set of keys on your SSHD server, enter:
+$ preinstall.sh
 
-# dpkg-reconfigure openssh-server
+This last script downloads nexmon from git, and builds the drivers only run the one for your device noted by filename, must be run as root
 
-You just regenerated new ssh server keys. You can restart ssh server:
+# postinstall-pizerow.sh
+# postinstall-pi3.sh
 
-# systemctl restart ssh
-OR
-# /etc/init.d/ssh restart
+Lastly there's a kismet script that install's kismet stable and you user pi to the kismet group
 
-And logout of root
+$ kismetinstall.sh
 
 # exit
 
