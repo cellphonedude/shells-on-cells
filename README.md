@@ -72,8 +72,11 @@ Upon first login you get a warning to update the password
 $ passwd
 
 $ sudo apt update
+
 $ sudo apt upgrade
+
 $ sudo apt autoremove
+
 $ sudo apt install bash-completion openssh-server autossh gpsd aircrack-ng dnsmasq hostapd
 
 Use raspi-config to configure network before boot, and hostname
