@@ -108,6 +108,7 @@ $preinstall.sh
 This last script downloads nexmon from git, and builds the drivers only run the one for your device noted by filename, must be run as root
 
 #postinstall-pizerow.sh
+
 #postinstall-pi3.sh
 
 Lastly there's a kismet script that install's kismet stable and you user pi to the kismet group
