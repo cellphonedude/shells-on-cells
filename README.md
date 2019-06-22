@@ -62,7 +62,7 @@ The drive will mount drop an empty "ssh" file into the root of the boot partitio
 
 
 Put the SD into the PI boot the pi and give it ethernet and you should be able to find it and ssh to it.
-*If using a raspberry pi zero use this guide to get it up and running using the OTG port: https://learn.sparkfun.com/tutorials/getting-started-with-the-raspberry-pi-zero-wireless
+*If using a raspberry pi zero use this guide to get it up and running using the OTG port: https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/ethernet-gadget
 
 Default User: pi
 Default Pass: raspberry
