@@ -117,9 +117,11 @@ $ kismetinstall.sh
 
 # Now Make SSH Keys For node and copy them off so you have them. 
 
-mkdir ~/.ssh
-chmod 700 ~/.ssh
-ssh-keygen -f ~/.ssh/ptdb_name_rsa -t rsa -b 4096 -N ''
+$ mkdir ~/.ssh
+
+$ chmod 700 ~/.ssh
+
+$ ssh-keygen -f ~/.ssh/ptdb_name_rsa -t rsa -b 4096 -N ''
 
 Edit the following configuration files with the configurations:
 
