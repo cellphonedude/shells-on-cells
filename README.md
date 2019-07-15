@@ -7,7 +7,7 @@ Raspberry Pi Zero W or Raspberry Pi3B (Raspberry Pi3B+ not yet compatible)
 # Build rpi Image on Mac
 
 Download Raspberian:
-https://www.raspberrypi.org/downloads/raspbian/
+https://downloads.raspberrypi.org/raspbian/images/raspbian-2019-04-09/
 
 Select RASPBIAN STRETCH 
 
