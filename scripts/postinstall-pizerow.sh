@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt-mark hold raspberrypi-kernel raspberrypi-bootloader
 apt update && apt upgrade -y
 cd /home/pi/
 git clone https://github.com/seemoo-lab/nexmon.git
