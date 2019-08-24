@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 sudo apt update && sudo apt upgrade -y
 sudo apt autoremove -y
 sudo rm -v /etc/ssh/ssh_host_*
