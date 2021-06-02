@@ -103,8 +103,52 @@ Burn the image onto the SD card using the methods below
 
    ![img](./images/etcher_flash.png)
 
+### Configure the SD card for headless mode
+
+1. Remount the SD card onto the machine once more (use cli tools or simply reinsert the SD card)
+
+2. Navigate to the `boot` partition of the SD card
+
+3. Create a blank `.ssh` file inside the directory
+
 ## Configure the Raspberry Pi admin credentials
 
+1. Insert the flashed SD card into the Pi, and boot up the Pi
+
+2. Attach the Pi to your machine via the Ethernet port ([or the OTG port if using a Pi Zero](https://learn.adafruit.com/turning-your-raspberry-pi-zero-into-a-usb-gadget/ethernet-gadget))
+
+3. SSH into your Pi
+
+   `$ ssh pi@raspberrypi.local`
+
+   or
+
+   `$ ssh pi@PI_IP_ADDRESS`
+
+4. Update the Pi's default passwords. Repeat for the `root` user as well
+
+   `$ passwd`
+
+   ```zsh
+   pi@raspberrypi:~$ passwd
+   Changing password for pi.
+   Current password: 
+   New password: 
+   Retype new password: 
+   passwd: password updated successfully
+   ```
+
+   ```zsh
+   root@raspberrypi: passwd
+   Changing password for root.
+   Current password: 
+   New password: 
+   Retype new password: 
+   passwd: password updated successfully
+   ```
+5. 
 ## Configure and run the install scripts
 
 ## Configure SSH credentials
+
+## Configure your cloud credentials
