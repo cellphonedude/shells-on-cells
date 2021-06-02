@@ -15,5 +15,5 @@ It is highly suggested to check out the links below.
 
 ## Credits
 
-    - [Github](https://github.com/cellphonedude)
-    - [XCape Inc.](https://xcapeinc.com/index.html)
+[Github](https://github.com/cellphonedude)
+[XCape Inc.](https://xcapeinc.com/index.html)
