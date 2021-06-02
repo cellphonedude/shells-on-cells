@@ -149,6 +149,12 @@ Burn the image onto the SD card using the methods below
 5. 
 ## Configure and run the install scripts
 
+TODO
+
 ## Configure SSH credentials
 
+TODO
+
 ## Configure your cloud credentials
+
+TODO
