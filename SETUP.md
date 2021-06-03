@@ -226,7 +226,7 @@ Burn the image onto the SD card using the methods below
 
    ```
 
-## Download, Configure and run the install scripts
+## Download and run the install scripts
 
 1. Make sure the system has `git` installed, otherwise install it with:
 
