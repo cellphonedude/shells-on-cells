@@ -96,7 +96,7 @@ Burn the image onto the SD card using the methods below
 
 1. Download and install a flashing tool like [balenaEtcher](https://www.balena.io/etcher/)
 
-2. In your flashing tool of choice, select the SD card on the machine
+2. In your flashing tool of choice, select the SD card on the machine and the Raspbian image to be flashed
 
 3. Flash the SD card and wait until finished
 
@@ -239,6 +239,8 @@ Burn the image onto the SD card using the methods below
    git version 2.11.0
    pi@hackBox2021:~ $ 
    ```
+
+TODO
 
 2. Pull the install scripts from the Git repository
 
