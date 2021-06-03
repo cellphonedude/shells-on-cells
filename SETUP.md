@@ -6,8 +6,7 @@ Below are the instructions for setting up the project. Feel free to inspect and 
 
 ### Download Raspbian
 
-1. Download `latest-raspbian-stretch.zip` from this link (later versions will not work with the project)
-  https://downloads.raspberrypi.org/raspbian/images/raspbian-2019-04-09/
+1. Download `latest-raspbian-stretch.zip` from this link (later versions will not work with the project): [Download link here](https://downloads.raspberrypi.org/raspbian/images/raspbian-2019-04-09/)
 
 2. Extract the contents of the `.zip` file and delete it, this will continue with the `.img` file onwards
 
@@ -17,7 +16,7 @@ Burn the image onto the SD card using the methods below
 
 #### Using `dd` (Mac and Linux only)
 
-- On Mac
+- **On Mac**
 
 1. Open a terminal
 
@@ -50,7 +49,7 @@ Burn the image onto the SD card using the methods below
    1858076672 bytes transferred in 399.146789 secs (4655121 bytes/sec)
    ```
 
-- On Linux
+- **On Linux**
 
 1. Open the terminal
 2. Find the SD card's disk label using `lsblk`
@@ -75,7 +74,7 @@ Burn the image onto the SD card using the methods below
    └─sde2   8:66   1   2.1G  0 part /media/user/rootfs
    ```
 
-   (The SD card appears on this machine as /dev/sde)
+   (The SD card appears on this machine as **/dev/sde**)
 
 3. Unmount the disk
 
@@ -125,6 +124,32 @@ Burn the image onto the SD card using the methods below
 
    `$ ssh pi@PI_IP_ADDRESS`
 
+   ```zsh
+   user@user:~$ ssh pi@raspberrypi.local
+   The authenticity of host 'raspberrypi.local (IP_ADDRESS)' can't be established.
+   ECDSA key fingerprint is SHA256:SOME_FINGERPRINT_HERE.
+   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+   Warning: Permanently added 'raspberrypi.local' (ECDSA) to the list of known hosts.
+   Warning: the ECDSA host key for 'raspberrypi.local' differs from the key for the IP address 'IP_ADDRESS'
+   Offending key for IP in /home/user/.ssh/known_hosts:12
+   Are you sure you want to continue connecting (yes/no)? yes
+   pi@raspberrypi.local's password: 
+   Linux raspberrypi 4.14.98-v7+ #1200 SMP Tue Feb 12 20:27:48 GMT 2019 armv7l
+
+   The programs included with the Debian GNU/Linux system are free software;
+   the exact distribution terms for each program are described in the
+   individual files in /usr/share/doc/*/copyright.
+
+   Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+   permitted by applicable law.
+   Last login: Thu Jun  3 01:13:55 2021
+
+   SSH is enabled and the default password for the 'pi' user has not been changed.
+   This is a security risk - please login as the 'pi' user and type 'passwd' to set a new password.
+
+   pi@raspberrypi:~ $ 
+   ```
+
 4. Update the Pi's default passwords. Repeat for the `root` user as well
 
    `$ passwd`
@@ -146,10 +171,77 @@ Burn the image onto the SD card using the methods below
    Retype new password: 
    passwd: password updated successfully
    ```
-5. 
-## Configure and run the install scripts
 
-TODO
+5. Configure the Pi's hardware using `raspi-config`
+
+   `$ sudo raspi-config`
+
+   - Edit the hostname
+
+      ![img](images/raspi-config-1.png)
+      ![img](images/raspi-config-2.png)
+      ![img](images/raspi-config-3.png)
+
+   - Configure network boot
+
+      ![img](images/raspi-config-4.png)
+      ![img](images/raspi-config-5.png)
+      ![img](images/raspi-config-6.png)
+      ![img](images/raspi-config-7.png)
+
+   - Configure the hardware serial (required when talking to the GSM Hat)
+
+      ![img](images/raspi-config-8.png)
+      ![img](images/raspi-config-9.png)
+      ![img](images/raspi-config-10.png)
+      ![img](images/raspi-config-11.png)
+      ![img](images/raspi-config-12.png)
+
+   - Finish it off and reboot
+
+      ![img](images/raspi-config-13.png)
+      ![img](images/raspi-config-14.png)
+
+6. Reconnect using the new hostname and password
+
+   `$ ssh pi@hackBox2021.local`
+
+   ```zsh
+      user@user:~$ ssh pi@hackBox2021.local
+      The authenticity of host 'hackbox2021.local (IP_ADDRESS)' can't be established.
+      ECDSA key fingerprint is SHA256:SOME_FINGERPRINT_HERE.
+      Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+      Warning: Permanently added 'hackbox2021.local' (ECDSA) to the list of known hosts.
+      pi@hackbox2021.local's password: 
+      Linux hackBox2021 4.14.98-v7+ #1200 SMP Tue Feb 12 20:27:48 GMT 2019 armv7l
+
+      The programs included with the Debian GNU/Linux system are free software;
+      the exact distribution terms for each program are described in the
+      individual files in /usr/share/doc/*/copyright.
+
+      Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+      permitted by applicable law.
+      Last login: Thu Jun  3 02:07:37 2021 from IP_ADDRESS
+      pi@hackBox2021:~ $ 
+
+   ```
+
+## Download, Configure and run the install scripts
+
+1. Make sure the system has `git` installed, otherwise install it with:
+
+   `$ sudo apt-get install git`
+
+   Verify by checking the git version
+
+   ```zsh
+   pi@hackBox2021:~ $ git --version
+   git version 2.11.0
+   pi@hackBox2021:~ $ 
+   ```
+
+2. Pull the install scripts from the Git repository
+
 
 ## Configure SSH credentials
 
