@@ -240,10 +240,9 @@ Burn the image onto the SD card using the methods below
    pi@hackBox2021:~ $ 
    ```
 
-TODO
-
 2. Pull the install scripts from the Git repository
 
+TODO
 
 ## Configure SSH credentials
 
