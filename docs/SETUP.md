@@ -305,9 +305,18 @@ Burn the image onto the SD card using the methods below
    - `<ptdb port>` - The port used for listening to ssh connections
    - `<c2 port for ptdb>` - The port used by the cloud instance to talk to your Pi
    - `<c2 user>` - The user's cloud username
-   - `<c2 domain>` - The user's cloud domain
+   - `<c2 domain>` - The user's cloud domain or IP address
    - `<c2 port for com>` - The port used by the Pi to talk to your cloud instance
    - `<nodename_rsa>` - The identity file, generated previously above
+
+5. Open and overwrite `/etc/network/interfaces` with the contents of the corresponding file:
+
+   - [Pi 3B `interfaces` file](../examples/etc-network-interfaces%20ptdb-pi3) for the Pi 3B
+   - [Pi Zero W `interfaces` file](../examples/etc-network-interfaces%20ptdb-pi0) for the Pi Zero W
+
+6. Open and overwrite `/etc/ssh/ssh_config` with the [contents of this project's `etc-ssh-ssh_config ptdb`](../examples/etc-ssh-ssh_config%20ptdb)
+
+7. Open and overwrite `/etc/ssh/sshd_config` with the [contents of this project's `etc-ssh-ssh_config ptdb`](../examples/etc-ssh-sshd_config%20ptdb)
 
 TODO
 
