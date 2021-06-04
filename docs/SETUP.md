@@ -249,15 +249,15 @@ Burn the image onto the SD card using the methods below
    `cd shells-on-cells/scripts && chmod +x ./*.sh`
 
 4. Run the scripts in this order
-   1. **`1stboot.sh`** - Updates the Pi image and regenerates the host SSH keys
-   2. **`2ndboot.sh`** - Downgrades the kernel to the latest supported kernel (4.14) and the latest supported nexmon drivers
-   3. **`preinstall.sh`** - Downloads fun tools, prerequisites for driver installation, and kernel source
-   4. **`postinstall-pizerow.sh`**/**`postinstall-pi3.sh`** - Downloads nexmon from git, and builds the drivers. Run the script denoted by device name, and also as root
-   5. **`kismetinstall.sh`** - Installs kismet-stable and adds the user **pi** to the `kismet` group
+   1. [**`1stboot.sh`**](../scripts/1stboot.sh) - Updates the Pi image and regenerates the host SSH keys
+   2. [**`2ndboot.sh`**](../scripts/2ndboot.sh) - Downgrades the kernel to the latest supported kernel (4.14) and the latest supported nexmon drivers
+   3. [**`preinstall.sh`**](../scripts/3rdboot.sh) - Downloads fun tools, prerequisites for driver installation, and kernel source
+   4. [**`postinstall-pizerow.sh`**](../scripts/postinstall-pizerow.sh)/[**`postinstall-pi3.sh`**](../scripts/3rdboot.sh) - Downloads nexmon from git, and builds the drivers. Run the script denoted by device name, and also as `root`
+   5. [**`kismetinstall.sh`**](../scripts/kismetinstall.sh) - Installs kismet-stable and adds the user **pi** to the `kismet` group
 
 ## Configure SSH credentials
 
-1. Generate a SSH key pair
+1. Generate a SSH key pair on the Raspberry Pi
 
    ```zsh
    mkdir ~/.ssh
@@ -289,6 +289,26 @@ Burn the image onto the SD card using the methods below
    pi@hackBox2021:~ $ 
 
    ```
+
+2. Open `/etc/rc.local` for editing
+
+   `sudo nano /etc/rc.local`
+
+3. Overwrite `/etc/rc.local` with the [contents of this file](../examples/etc-rc.local)
+
+4. Note this line from the modified `rc.local`
+
+   `autossh -fN -R <ptdb port>:localhost:<c2 port for ptdb> <c2 user>@<c2 domain> -p <c2 port for com> -i /home/pi/.ssh/<nodename_rsa> &`
+
+   Change the following parameters:
+
+   - `<ptdb port>` - The port used for listening to ssh connections
+   - `<c2 port for ptdb>` - The port used by the cloud instance to talk to your Pi
+   - `<c2 user>` - The user's cloud username
+   - `<c2 domain>` - The user's cloud domain
+   - `<c2 port for com>` - The port used by the Pi to talk to your cloud instance
+   - `<nodename_rsa>` - The identity file, generated previously above
+
 TODO
 
 ## Configure your cloud credentials
