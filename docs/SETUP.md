@@ -6,7 +6,7 @@ Below are the instructions for setting up the project. Feel free to inspect and 
 
 ### Download Raspbian
 
-1. Download `latest-raspbian-stretch.zip` from this link (later versions will not work with the project): [Download link here](https://downloads.raspberrypi.org/raspbian/images/raspbian-2019-04-09/)
+1. Download `latest-raspbian-stretch.zip` from this link (later versions will not work with the project): [Download link here](https://downloads.raspberrypi.org/raspbian/../images/raspbian-2019-04-09/)
 
 2. Extract the contents of the `.zip` file and delete it, this will continue with the `.img` file onwards
 
@@ -100,7 +100,7 @@ Burn the image onto the SD card using the methods below
 
 3. Flash the SD card and wait until finished
 
-   ![img](./images/etcher_flash.png)
+   ![img](./../images/etcher_flash.png)
 
 ### Configure the SD card for headless mode
 
@@ -176,31 +176,31 @@ Burn the image onto the SD card using the methods below
 
    `$ sudo raspi-config`
 
-   - Edit the hostname
+   - Edit the hostname. Let's call ourselves `hackBox2021` as an example
 
-      ![img](images/raspi-config-1.png)
-      ![img](images/raspi-config-2.png)
-      ![img](images/raspi-config-3.png)
+      ![img](../images/raspi-config-1.png)
+      ![img](../images/raspi-config-2.png)
+      ![img](../images/raspi-config-3.png)
 
    - Configure network boot
 
-      ![img](images/raspi-config-4.png)
-      ![img](images/raspi-config-5.png)
-      ![img](images/raspi-config-6.png)
-      ![img](images/raspi-config-7.png)
+      ![img](../images/raspi-config-4.png)
+      ![img](../images/raspi-config-5.png)
+      ![img](../images/raspi-config-6.png)
+      ![img](../images/raspi-config-7.png)
 
    - Configure the hardware serial (required when talking to the GSM Hat)
 
-      ![img](images/raspi-config-8.png)
-      ![img](images/raspi-config-9.png)
-      ![img](images/raspi-config-10.png)
-      ![img](images/raspi-config-11.png)
-      ![img](images/raspi-config-12.png)
+      ![img](../images/raspi-config-8.png)
+      ![img](../images/raspi-config-9.png)
+      ![img](../images/raspi-config-10.png)
+      ![img](../images/raspi-config-11.png)
+      ![img](../images/raspi-config-12.png)
 
    - Finish it off and reboot
 
-      ![img](images/raspi-config-13.png)
-      ![img](images/raspi-config-14.png)
+      ![img](../images/raspi-config-13.png)
+      ![img](../images/raspi-config-14.png)
 
 6. Reconnect using the new hostname and password
 
@@ -240,12 +240,55 @@ Burn the image onto the SD card using the methods below
    pi@hackBox2021:~ $ 
    ```
 
-2. Pull the install scripts from the Git repository
+2. Download the install scripts from the Git repository
 
-TODO
+   `git clone https://github.com/cellphonedude/shells-on-cells`
+
+3. Navigate to the scripts folder, and give the scripts execute privileges
+
+   `cd shells-on-cells/scripts && chmod +x ./*.sh`
+
+4. Run the scripts in this order
+   1. **`1stboot.sh`** - Updates the Pi image and regenerates the host SSH keys
+   2. **`2ndboot.sh`** - Downgrades the kernel to the latest supported kernel (4.14) and the latest supported nexmon drivers
+   3. **`preinstall.sh`** - Downloads fun tools, prerequisites for driver installation, and kernel source
+   4. **`postinstall-pizerow.sh`**/**`postinstall-pi3.sh`** - Downloads nexmon from git, and builds the drivers. Run the script denoted by device name, and also as root
+   5. **`kismetinstall.sh`** - Installs kismet-stable and adds the user **pi** to the `kismet` group
 
 ## Configure SSH credentials
 
+1. Generate a SSH key pair
+
+   ```zsh
+   mkdir ~/.ssh
+   chmod 700 ~/.ssh
+   ssh-keygen -f ~/.ssh/ptdb_name_rsa -t rsa -b 4096 -N ''
+   ```
+
+   ```zsh
+   pi@hackBox2021:~ $ mkdir ~/.ssh
+   pi@hackBox2021:~ $ chmod 700 ~/.ssh
+   pi@hackBox2021:~ $ ssh-keygen -f ~/.ssh/ptdb_name_rsa -t rsa -b 4096 -N ''
+   Generating public/private rsa key pair.
+   Your identification has been saved in /home/pi/.ssh/ptdb_name_rsa.
+   Your public key has been saved in /home/pi/.ssh/ptdb_name_rsa.pub.
+   The key fingerprint is:
+   SHA256:SOME_FINGERPRINT_HERE pi@hackBox2021
+   The key's randomart image is:
+   +---[RSA 4096]----+
+   |                 |
+   |                 |
+   |                 |
+   |                 |
+   |  (Random Art)   |
+   |                 |
+   |                 |
+   |                 |
+   |                 |
+   +----[SHA256]-----+
+   pi@hackBox2021:~ $ 
+
+   ```
 TODO
 
 ## Configure your cloud credentials

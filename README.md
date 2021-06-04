@@ -10,8 +10,8 @@ This project interacts with a client's internal architecture regardless of clien
 
 It is highly suggested to check out the links below.
 
-- [Hardware List](./BOM.md)
-- [Software Setup](./SETUP.md)
+- [Hardware List](./docs/BOM.md)
+- [Software Setup](./docs/SETUP.md)
 
 ## Credits
 
