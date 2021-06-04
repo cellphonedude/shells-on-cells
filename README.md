@@ -10,10 +10,12 @@ This project interacts with a client's internal architecture regardless of clien
 
 It is highly suggested to check out the links below.
 
-- [Hardware List](./docs/BOM.md)
+- [Electronics List](./docs/BOM.md)
 - [Software Setup](./docs/SETUP.md)
+- [Case 3D Printing](./docs/CASE.md))
 
 ## Credits
 
 [Github](https://github.com/cellphonedude)
+
 [XCape Inc.](https://xcapeinc.com/index.html)
