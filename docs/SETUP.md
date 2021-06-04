@@ -110,7 +110,7 @@ Burn the image onto the SD card using the methods below
 
 3. Create a blank `.ssh` file inside the directory
 
-## Configure the Raspberry Pi admin credentials
+## Configure basic Raspberry Pi settings
 
 1. Insert the flashed SD card into the Pi, and boot up the Pi
 
@@ -226,7 +226,7 @@ Burn the image onto the SD card using the methods below
 
    ```
 
-## Download and run the install scripts
+## Download and run the project's install scripts
 
 1. Make sure the system has `git` installed, otherwise install it with:
 
@@ -248,7 +248,7 @@ Burn the image onto the SD card using the methods below
 
    `cd shells-on-cells/scripts && chmod +x ./*.sh`
 
-4. Run the scripts in this order
+4. Run the scripts in the order shown below. Reboot after each script has run
    1. [**`1stboot.sh`**](../scripts/1stboot.sh) - Updates the Pi image and regenerates the host SSH keys
    2. [**`2ndboot.sh`**](../scripts/2ndboot.sh) - Downgrades the kernel to the latest supported kernel (4.14) and the latest supported nexmon drivers
    3. [**`preinstall.sh`**](../scripts/3rdboot.sh) - Downloads fun tools, prerequisites for driver installation, and kernel source
@@ -294,7 +294,7 @@ Burn the image onto the SD card using the methods below
 
    `sudo nano /etc/rc.local`
 
-3. Overwrite `/etc/rc.local` with the [contents of this file](../examples/etc-rc.local)
+3. Overwrite `/etc/rc.local` with the [contents of this project's `etc-rc.local` file](../examples/etc-rc.local)
 
 4. Note this line from the modified `rc.local`
 
@@ -314,12 +314,18 @@ Burn the image onto the SD card using the methods below
    - [Pi 3B `interfaces` file](../examples/etc-network-interfaces%20ptdb-pi3) for the Pi 3B
    - [Pi Zero W `interfaces` file](../examples/etc-network-interfaces%20ptdb-pi0) for the Pi Zero W
 
-6. Open and overwrite `/etc/ssh/ssh_config` with the [contents of this project's `etc-ssh-ssh_config ptdb`](../examples/etc-ssh-ssh_config%20ptdb)
+6. Open and overwrite `/etc/ssh/ssh_config` with the [contents of this project's `etc-ssh-ssh_config ptdb` file](../examples/etc-ssh-ssh_config%20ptdb)
 
-7. Open and overwrite `/etc/ssh/sshd_config` with the [contents of this project's `etc-ssh-ssh_config ptdb`](../examples/etc-ssh-sshd_config%20ptdb)
+7. Open and overwrite `/etc/ssh/sshd_config` with the [contents of this project's `etc-ssh-ssh_config ptdb` file](../examples/etc-ssh-sshd_config%20ptdb)
 
-TODO
+## Configure the cloud instance
 
-## Configure your cloud credentials
+1. Make sure that your cloud instance (C2) is ready for an ssh session. Do so by matching the configuring the C2's ssh ports, user credentials and domain
+
+2. SSH into C2 using the Pi, and add the fingerprint when prompted
+
+3. Overwrite C2's `/etc/ssh/ssh_config` file with the contents of [this project's `etc-ssh-ssh_config c2` file](../examples/etc-ssh-ssh_config%20c2)
+
+4. Overwrite C2's `/etc/ssh/sshd_config` file with the contents of [this project's `etc-ssh-sshd_config c2` file](../examples/etc-ssh-sshd_config%20c2)
 
 TODO
