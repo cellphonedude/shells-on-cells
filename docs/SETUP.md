@@ -328,4 +328,12 @@ Burn the image onto the SD card using the methods below
 
 4. Overwrite C2's `/etc/ssh/sshd_config` file with the contents of [this project's `etc-ssh-sshd_config c2` file](../examples/etc-ssh-sshd_config%20c2)
 
+5. TODO
+
+6. TODO
+7. TODO
+8. TODO
+9. TODO
+10. TODO
+
 TODO
