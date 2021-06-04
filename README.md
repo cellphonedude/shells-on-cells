@@ -12,7 +12,7 @@ It is highly suggested to check out the links below.
 
 - [Electronics List](./docs/BOM.md)
 - [Software Setup](./docs/SETUP.md)
-- [Case 3D Printing](./docs/CASE.md))
+- [Case 3D Printing](./docs/CASE.md)
 
 ## Credits
 
